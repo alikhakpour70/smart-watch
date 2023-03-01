@@ -1,9 +1,9 @@
 const Cart = ()=>{
-    return(
-        <div>
-            cart
-        </div>
-    )
+  return (
+    <div className="cart-container">
+      cart page
+    </div>
+  )
 }
 
 export default Cart 

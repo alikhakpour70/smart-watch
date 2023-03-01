@@ -1,0 +1,4 @@
+@keyframes img {
+    0%{ transform: translate(200px, 0)};
+    100%{ transform: translate(0px, 0)};
+}

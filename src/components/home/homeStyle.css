@@ -1,16 +1,128 @@
-.home-component{
-    width: 95%;
-    height: 100%;
-    min-height: 100vh;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.home-component {
+  width: 95%;
+  height: 100%;
+  min-height: 100vh;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.home-component div{
+.home-component div {
+  width: 100%;
+  height: 270px;
+}
+
+.home-component .info-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  margin: 0 0 3px;
+  font-family: titr;
+}
+
+.info-start-right {
+  width: 100%;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 15px;
+  background-image: url("../../assets/images/closeup-focused-shot-branch-wheat-with-bright-background_181624-4872.jpg");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size:initial;
+}
+
+.info-start-right .textIntro {
+  width: 90%;
+  height: 70%;
+  background-color: #d3a31f6c;
+  color: #01073a;
+  font-size: 16px;
+  font-weight: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: 0 0 1px #e2f105;
+ 
+}
+.textIntro h2 {
+  font-size: 30px;
+}
+.textIntro p {
+  color: #b80101;
+}
+.info-start-right .imageIntro-container {
+  width: 45%;
+  height: 100%;
+  display: none;
+}
+.imageIntro-container img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* style for slider container */
+
+.slider-container{
+  width: 100%;
+  height: 270px;
+}
+
+
+
+/* ************* */
+
+.show-product{
+  margin-top: 35px;
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+@media (min-width: 765px) {
+
+  .home-component div {
     width: 100%;
-    height: 250px;
-    background-color: #fff;
-    margin: 10px 0;
+    height: 350px;
+  }
+
+  .home-component .info-start {
+    height: 500px;
+    flex-direction: row-reverse;
+  }
+
+  .info-start-right {
+    width: 100%;
+    height: 500px;
+    background-image: none;
+    /* background-color: #f5d1d1; */
+  }
+
+  .info-start-right .textIntro {
+    width: 45%;
+    height: 550px;
+    justify-content: flex-start;
+    padding: 80px;
+  }
+
+  .info-start-right .imageIntro-container {
+    width: 55%;
+    display: block;
+  }
 
 }

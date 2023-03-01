@@ -57,7 +57,7 @@ export const Database = [
     brand: "Apple",
     model: "serie SE",
     description: "",
-    images: [apple_serieSE1,apple_serieSE2,apple_serieSE3,],
+    images: [apple_serieSE1, apple_serieSE2, apple_serieSE3,],
     favorite: 0,
     quantity: 0,
   },

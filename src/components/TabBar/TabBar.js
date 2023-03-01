@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const tabbar = [
   { title: "cart", icon: <HiOutlineShoppingBag />, to: "/cartPage", id: 5 },
-  { title: "search", icon: <FiSearch />, to: "/search", id: 4, isShow: false },
+  // { title: "search", icon: <FiSearch />, to: "/search", id: 4, isShow: false },
   { title: "home", icon: <BiHome />, to: "/", id: 3 },
   { title: "store", icon: <BiStore />, to: "/storePage", id: 2 },
   { title: "login", icon: <FiLogIn />, to: "/loginPage", id: 1 },
@@ -21,8 +21,8 @@ const TabBar = () => {
     const icons = { ...tabbar[index] };
     icons.isShow = !icons.isShow;
     const updateIcons = [...tabbar];
-    updateIcons[index] = icons
-    setShow(updateIcons)
+    updateIcons[index] = icons;
+    setShow(updateIcons);
   };
   return (
     <div className="tabbar-component">
@@ -34,7 +34,6 @@ const TabBar = () => {
             </NavLink>
           </div>
         ))}
-
       </div>
     </div>
   );

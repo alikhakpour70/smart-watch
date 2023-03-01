@@ -6,6 +6,7 @@ import Store from "./components/store/store";
 import Layout from "./layout/Layout";
 import HomePage from "./pages/HomePage";
 import Search from "./utils/search/saerch";
+import PanelPage from './components/userPanel/Panel'
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
             <Route path="/cartPage" element={<Cart />} />
             <Route path="/storePage" element={<Store />} />
             <Route path="/search" element={<Search />} />
+            {/* <Route path="/PanelPage" element={<PanelPage />} /> */}
+
           </Routes>
         </Layout>
       </BrowserRouter>
