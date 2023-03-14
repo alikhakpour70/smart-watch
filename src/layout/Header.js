@@ -2,92 +2,97 @@ import "./layoutStayle.css";
 import { FiMenu, FiSearch } from "react-icons/fi";
 import { BsBellFill } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-
-const navBar = [
-  { title: "خانه", id: 1, to: "/" },
-  {
-    title: "دسته بندی",
-    id: 2,
-    dropDownIcon: "+",
-    isShow: "false",
-    category: [
-      { titel: "اپل واچ", id: 1, to: "" },
-      { titel: " شیائومی", id: 2, to: "" },
-      { titel: "سامسونگ", id: 3, to: "" },
-      { titel: "هواوی ", id: 4, to: "" },
-    ],
-  },
-  { title: "مقالات", id: 6, to: "", dropDownIcon: "+" },
-  { title: "درباره ما", id: 3, to: "" },
-  { title: "ارتباط با ما", id: 4, to: "" },
-  { title: "ورود", id: 5, to: "" },
-];
+import NavBar from "../components/navigations/Navigation";
+import Search from "../utils/search/saerch";
 
 const Header = () => {
-  const [show, setShow] = useState(false);
-  const [showCategory, setShowCategory] = useState(false);
-  const [Category, setCategory] = useState({});
+  
+  const [showComponent, setShowComponent] = useState([
+    { bell: false, id: 1 },
+    { search: false, id: 2 },
+    { menu: false, id: 3 },
+  ]);
 
-  const menuHamdler = () => {
-    setShow(!show);
-  };
+  const ShowHandler = (id) => {
+    switch (id) {
 
-  //  function to show category
+      case 1:
+        const indexBell = showComponent.findIndex((i) => i.id === id);
+        const componentBell = { ...showComponent[indexBell] };
+        componentBell.bell = !componentBell.bell;
+        const updatecomponentBell = [...showComponent];
+        updatecomponentBell[indexBell] = componentBell;
+        updatecomponentBell[1].search = false;
+        updatecomponentBell[2].menu = false;
+        return setShowComponent(updatecomponentBell);
 
-  const categoryHandler = (id) => {
-    console.log(id);
+      case 2:
+        const index = showComponent.findIndex((i) => i.id === id);
+        const component = { ...showComponent[index] };
+        component.search = !component.search;
+        const updateComponent = [...showComponent];
+        updateComponent[index] = component;
+        updateComponent[0].bell = false;
+        updateComponent[2].menu = false;
+        return setShowComponent(updateComponent);
+      
+        case 3:
+        const indexMenu = showComponent.findIndex((i) => i.id === id);
+        const componentMenu = { ...showComponent[indexMenu] };
+        componentMenu.menu = !componentMenu.menu;
+        const updatecomponentMenu = [...showComponent];
+        updatecomponentMenu[indexMenu] = componentMenu;
+        updatecomponentMenu[0].bell = false;
+        updatecomponentMenu[1].search = false;
+        return setShowComponent(updatecomponentMenu);
+     
+        default:
+        return showComponent;
+    }
   };
 
   return (
     <header className="header-container">
       <section className="header">
         <section className="right-header">
-          <i onClick={menuHamdler}>{!show ? <FiMenu /> : <AiOutlineClose />}</i>
-
-          {/* dropDown of sidbar */}
-
-          <div className={show ? "menuSid" : " menuSid-false"}>
-            <div>
-              {navBar.map((item) => (
-                <NavLink
-                  to={item.to}
-                  key={item.id}
-                  className="navlink-container"
-                >
-                  <li onClick={menuHamdler}>{item.title}</li>
-                  <li className="dropDownIcon">{item.dropDownIcon}</li>
-                </NavLink>
-              ))}
-            </div>
-          </div>
+          <i onClick={() => ShowHandler(3)}>
+            {!showComponent[2].menu ? <FiMenu /> : <AiOutlineClose />}
+          </i>
           <p className="smartWatch2"> تایــم لنـــد</p>
 
-          {/* navbar of min-Width 765px  */}
-
-          <div className="navBar-header">
-            {navBar.map((item) => (
-              <div key={item.id} className="navlink-container">
-                <NavLink to={item.to}> </NavLink>
-                <p
-                  className="dropDownIcon"
-                  onClick={}
-                ></p>
-              </div>
-            ))}
+          <div className={showComponent[2].menu ? "menuSid" : " menuSid-false"}>
+            <NavBar ShowHandler={ShowHandler}/>
           </div>
 
           <p className="smartWatch">تایـــم لنـــــد </p>
         </section>
+
         <div className="left-header">
-          <i>
+          <i onClick={() => ShowHandler(1)}>
             <BsBellFill />
           </i>
-          <i>
+          <i onClick={() => ShowHandler(2)}>
             <FiSearch />
           </i>
         </div>
+        {showComponent[0].bell && (
+          <div
+            style={{
+              width: "100%",
+              height: "20vh",
+              padding: "30px 100px",
+              backgroundColor: "#fff",
+              position: "absolute",
+              top: "65px",
+              right: "0",
+            }}
+          >
+            <p>برای اطلاع از پیام ها لازم است لاگین کنید</p>
+          </div>
+        )}
+        {showComponent[1].search && <Search />}
       </section>
     </header>
   );

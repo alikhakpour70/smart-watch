@@ -19,6 +19,17 @@
 }
 
 
+/*   store page style */
+
+.storePage-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 /*   panelPage-container style */
 
 .panelPage-container{

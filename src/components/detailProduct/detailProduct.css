@@ -1,0 +1,15 @@
+.detail-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detail {
+  width: 95%;
+  max-width: 1200px;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f80a0a;
+}

@@ -9,6 +9,12 @@
   }
 }
 
+@keyframes catgory {
+  from{height: 0;};
+  from{height: 100%;};
+}
+
+
 .layout-container {
   width: 100%;
   margin-top: 80px;
@@ -86,6 +92,7 @@
   padding: 20px;
   z-index: 99;
   direction: rtl;
+  overflow: auto;
 }
 
 .menuSid .navlink-container {
@@ -112,11 +119,14 @@
   display: none;
 }
 
-.dropDownIcon{
-  background-color: #adaeaf;
-  padding: 5px ;
-  color: #faf605;
+.container-category{
+  width: 250px;
+  height: 50px;
+  background-color: rgb(110, 113, 116);
+ /* transform: translate(-5px, -140px); */
 }
+
+
 
 /*   start style for footer */
 

@@ -12,7 +12,7 @@ import apple_serieSE1 from "../assets/images/apple serie SE1.png";
 import apple_serieSE2 from "../assets/images/apple serie SE2.png";
 import apple_serieSE3 from "../assets/images/apple serie SE3.png";
 
-export const Database = [
+ const Database = [
   {
     id: 1,
     brand: "xiaomi",
@@ -23,6 +23,7 @@ export const Database = [
     color: ["Blue", "whaite", "Black", "grean"],
     favorite: 0,
     quantity: 0,
+    price:1000000
   },
   {
     id: 2,
@@ -42,6 +43,7 @@ export const Database = [
     images: [],
     favorite: 0,
     quantity: 0,
+    price:1000000
   },
   {
     id: 4,
@@ -51,6 +53,7 @@ export const Database = [
     images: [apple_serie6_1,apple_serie6_2],
     favorite: 0,
     quantity: 0,
+    price:1000000
   },
   {
     id: 5,
@@ -60,5 +63,8 @@ export const Database = [
     images: [apple_serieSE1, apple_serieSE2, apple_serieSE3,],
     favorite: 0,
     quantity: 0,
+    price:1000000
   },
 ];
+
+export default Database

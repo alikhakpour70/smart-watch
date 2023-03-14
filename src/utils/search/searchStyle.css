@@ -1,3 +1,50 @@
 .search-component {
- /* margin-top: 100px ; */
+  width: 100%;
+  height: 50vh;
+  overflow: auto;
+  background-color: #ffffff;
+  position: absolute;
+  top: 65px;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 3px #a3a0a0;
+}
+
+.searchForm {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  margin-top: 30px;
+}
+
+.searchForm input {
+  width: 85%;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #aca7a7;
+  position: relative;
+  direction: rtl;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+  iranSans;
+
+}
+.searchForm button {
+  position: absolute;
+  left: 9.6%;
+  padding: 9px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  color: #fcfafa;
+  background-color: #4100b9;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif,
+    iranSans;
+  border-radius: 5px 0 0 5px;
+
+    
 }
